@@ -7,6 +7,12 @@ task-oriented dialogue agent developed for the Sony CPDC 2025 challenge.
 The focus of this baseline was to validate the end-to-end dialogue pipeline
 and ensure persona consistency before applying advanced optimizations.
 
+## User Interface
+This project includes a Streamlit-based user interface used for interacting
+with the persona-grounded dialogue agent during development and testing.
+The Streamlit app was used to visualize responses, test persona consistency,
+and validate end-to-end system behavior.
+
 ## Pipeline
 User Input →
 Persona/System Prompt Injection →
