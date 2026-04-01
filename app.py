@@ -538,7 +538,26 @@ if st.session_state.selected_persona:
     st.caption(f"*{persona['role']}* · {', '.join(persona['traits'])} · Strategy: **{st.session_state.selected_strategy}**")
 else:
     st.title("🎮 CPDC 2025 — Persona Dialogue Agent")
-    st.info("👈 Select a character from the sidebar to start.")
+    st.markdown("""
+**A persona-grounded, task-oriented dialogue agent built for the Sony CPDC 2025 challenge.**
+
+This system lets you chat with RPG characters who can:
+- 🗡️ Retrieve live game data (quests, items, character stats, locations)
+- 🧠 Stay in-character using 4 different prompting strategies
+- 📊 Evaluate itself in real-time using ROUGE-L and BERTScore
+
+**How to use:**
+1. 👈 Pick a character from the sidebar (e.g. Aether, Myst, Shadow)
+2. Choose a prompting strategy (Zero-Shot, Chain of Thought, etc.)
+3. Start chatting — try asking about quests, items, or character stats
+
+**Sample prompts to try:**
+> *"What are my character stats in Elden Ring?"*
+> *"Tell me about the Lost Artifact quest"*
+> *"What items can I find in the Dragon's Peak location?"*
+> *"Show me the Mage skill tree in Divinity"*
+    """)
+    st.info("👈 Select a character from the sidebar to begin!")
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
