@@ -493,13 +493,16 @@ with st.sidebar:
     st.subheader("🎭 Character")
     persona_names = list(PERSONAS.keys())
     if persona_names:
-        default_idx = 0
+        options_with_placeholder = ["-- Select a character --"] + persona_names
         if st.session_state.selected_persona in persona_names:
-            default_idx = persona_names.index(st.session_state.selected_persona)
+            default_idx = persona_names.index(st.session_state.selected_persona) + 1
+        else:
+            default_idx = 0
 
-        selected_persona_name = st.selectbox("Choose a Character", options=persona_names, index=default_idx)
-        if selected_persona_name != st.session_state.selected_persona:
-            st.session_state.selected_persona = selected_persona_name
+        selected_persona_name = st.selectbox("Choose a Character", options=options_with_placeholder, index=default_idx)
+        actual_selection = None if selected_persona_name == "-- Select a character --" else selected_persona_name
+        if actual_selection != st.session_state.selected_persona:
+            st.session_state.selected_persona = actual_selection
             st.session_state.messages = []
             st.rerun()
 
