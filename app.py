@@ -6,14 +6,13 @@ import json
 import sys
 import pandas as pd
 from typing import List, Dict, Any, Optional
-from functools import lru_cache
 from dotenv import load_dotenv
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # --- Import persona_loader ---
 try:
-    from persona_loader import load_personas_from_dataset, get_default_personas
+    from persona_loader import load_personas_from_dataset, get_default_personas, get_player_personas, get_player_persona_tone
 except ImportError:
     import importlib.util
     spec = importlib.util.spec_from_file_location(
@@ -23,6 +22,8 @@ except ImportError:
     spec.loader.exec_module(persona_loader)
     load_personas_from_dataset = persona_loader.load_personas_from_dataset
     get_default_personas = persona_loader.get_default_personas
+    get_player_personas = persona_loader.get_player_personas
+    get_player_persona_tone = persona_loader.get_player_persona_tone
 
 # --- Import function executor ---
 try:
@@ -61,9 +62,6 @@ for env_path in [
 else:
     load_dotenv()
 
-# ─────────────────────────────────────────────
-# Constants
-# ─────────────────────────────────────────────
 STRATEGIES = ["Zero-Shot", "Few-Shot", "Chain of Thought", "Persona Sandwich"]
 
 DEFAULT_FUNCTIONS = [
@@ -82,7 +80,7 @@ BASE_JSON_SCHEMA = (
     '  "function_call": {"name": "<function name>", "arguments": { /* exact keys/values */ }}\n'
     "}\n"
     "If no function is needed, omit 'function_call'.\n"
-    "IMPORTANT: Do NOT use 'function'/'parameters' — only use 'function_call'/'arguments'."
+    "IMPORTANT: Do NOT use 'function'/'parameters' -- only use 'function_call'/'arguments'."
 )
 
 OPENAI_MODELS = {
@@ -98,22 +96,17 @@ GROQ_MODELS = {
     "Mixtral 8x7B": "mixtral-8x7b-32768",
 }
 
-# ─────────────────────────────────────────────
-# Page config
-# ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="CPDC 2025 — Persona Dialogue Agent",
+    page_title="CPDC 2025 -- Persona Dialogue Agent",
     page_icon="🎮",
     layout="wide"
 )
 
-# ─────────────────────────────────────────────
-# Session state defaults
-# ─────────────────────────────────────────────
 DEFAULTS = {
     "messages": [],
     "api_provider": "groq",
     "selected_persona": None,
+    "selected_player_persona": None,
     "selected_strategy": STRATEGIES[0],
     "groq_api_key": st.secrets.get("GROQ_API_KEY", os.getenv("GROQ_API_KEY", "")),
     "openai_api_key": st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY", "")),
@@ -125,20 +118,15 @@ for k, v in DEFAULTS.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
-# ─────────────────────────────────────────────
-# Load personas
-# ─────────────────────────────────────────────
 try:
     PERSONAS = load_personas_from_dataset()
 except Exception:
     PERSONAS = get_default_personas()
 
-# ─────────────────────────────────────────────
-# Dataset cache — load once, not per message
-# ─────────────────────────────────────────────
+PLAYER_PERSONAS = get_player_personas()
+
 @st.cache_data
 def load_dataset_index() -> Dict[str, dict]:
-    """Load the gold dataset into a dict keyed by user_utterance for O(1) lookup."""
     index = {}
     possible_paths = [
         os.path.join(os.path.dirname(__file__), "rpg_persona_dataset.jsonl"),
@@ -170,9 +158,6 @@ def load_gold_for_utterance(utterance: str):
         return ex.get("gold", {"needs_call": False, "one_call_only": True}), ex.get("gold_response", "")
     return {"needs_call": False, "one_call_only": True}, ""
 
-# ─────────────────────────────────────────────
-# Client helpers
-# ─────────────────────────────────────────────
 def init_client(provider: str, api_key: str):
     try:
         if provider == "openai":
@@ -184,7 +169,6 @@ def init_client(provider: str, api_key: str):
         return None
 
 def get_llm_response(provider: str, client, messages: List[Dict], model: str) -> str:
-    """Single unified function to call either OpenAI or GROQ."""
     try:
         response = client.chat.completions.create(
             model=model,
@@ -203,9 +187,6 @@ def get_active_client():
 def get_active_model(model_options: dict, selected_label: str) -> str:
     return model_options.get(selected_label, list(model_options.values())[0])
 
-# ─────────────────────────────────────────────
-# Prompt building
-# ─────────────────────────────────────────────
 def strategy_rules(strategy_name: str, enable_action_first: bool = False) -> str:
     if strategy_name == "Zero-Shot":
         return "Be helpful, concise, and stay in character.\nUse a function when needed.\n\n" + BASE_JSON_SCHEMA
@@ -219,7 +200,7 @@ def strategy_rules(strategy_name: str, enable_action_first: bool = False) -> str
             "3) If yes, identify the correct function and arguments\n"
             "4) Respond in character\n\n" + BASE_JSON_SCHEMA
         )
-    else:  # Persona Sandwich
+    else:
         rules = []
         if enable_action_first:
             rules.append(
@@ -233,31 +214,32 @@ def strategy_rules(strategy_name: str, enable_action_first: bool = False) -> str
             rules.append("If you call a function, you may leave 'response' empty.")
         return "RULES:\n" + "".join(rules)
 
-
 def build_persona_prompt(
     persona_data: Dict[str, Any],
     user_message: str,
     chat_history: List[Dict[str, str]],
     strategy_name: str,
     enable_action_first: bool = False,
+    player_persona_name: str = None,
 ) -> str:
     if not persona_data:
         return user_message
 
     traits = ", ".join(persona_data.get("traits", []))
     worldview_obj = persona_data.get("worldview", {})
-    worldview = worldview_obj.get("type", str(worldview_obj)) if isinstance(worldview_obj, dict) else str(worldview_obj or "—")
+    worldview = worldview_obj.get("type", str(worldview_obj)) if isinstance(worldview_obj, dict) else str(worldview_obj or "--")
     functions = persona_data.get("functions", [])
     context = "\n".join([
         f"{'User' if m['role'] == 'user' else persona_data['name']}: {m['content']}"
         for m in chat_history[-5:]
     ])
     rules = strategy_rules(strategy_name, enable_action_first=enable_action_first)
+    player_tone = get_player_persona_tone(player_persona_name) if player_persona_name else ""
 
     return f"""You are {persona_data['name']}, a {persona_data['role']}.
 Traits: {traits}
 Worldview: {worldview}
-
+{player_tone}
 Available functions (only for game data: stats, quests, items, locations, skills, recipes):
 {json.dumps(functions, indent=2)}
 
@@ -268,10 +250,6 @@ Previous conversation:
 
 Respond to the next user message as {persona_data['name']} with the JSON format."""
 
-
-# ─────────────────────────────────────────────
-# Response normalization
-# ─────────────────────────────────────────────
 def normalize_pred_schema(raw_obj) -> Dict[str, Any]:
     if isinstance(raw_obj, dict) and ("function_call" in raw_obj or "response" in raw_obj):
         call = raw_obj.get("function_call")
@@ -291,10 +269,6 @@ def normalize_pred_schema(raw_obj) -> Dict[str, Any]:
         }
     return {"response": str(raw_obj), "function_call": None, "num_calls": 0, "text_before_call": False}
 
-
-# ─────────────────────────────────────────────
-# Function call narration
-# ─────────────────────────────────────────────
 def narrate_call(persona_name: str, call: dict) -> str:
     if not call:
         return ""
@@ -311,7 +285,6 @@ def narrate_call(persona_name: str, call: dict) -> str:
     text = narrations.get(name, f"I'm executing {name.replace('_', ' ')} with {', '.join(f'{k}={v}' for k, v in args.items()) or 'no arguments'}.")
     return f"{persona_name}: {text}"
 
-
 def narrate_result(persona_name: str, tool_result) -> str:
     if not tool_result:
         return ""
@@ -319,13 +292,9 @@ def narrate_result(persona_name: str, tool_result) -> str:
         keys = list(tool_result.keys())[:3]
         if keys:
             kv = "; ".join(f"{k}: {tool_result[k]}" for k in keys)
-            return f"{persona_name}: I found these key details — {kv}."
+            return f"{persona_name}: I found these key details -- {kv}."
     return f"{persona_name}: I've gathered the requested information."
 
-
-# ─────────────────────────────────────────────
-# Render response
-# ─────────────────────────────────────────────
 def render_response_with_functions(pred: Dict[str, Any], persona_data: Dict[str, Any]) -> str:
     call = pred.get("function_call")
     persona_name = (persona_data or {}).get("name", "Assistant")
@@ -357,10 +326,6 @@ def render_response_with_functions(pred: Dict[str, Any], persona_data: Dict[str,
 
     return assistant_text
 
-
-# ─────────────────────────────────────────────
-# Metrics display
-# ─────────────────────────────────────────────
 def display_metrics(metrics: dict):
     st.subheader("📊 Turn Metrics")
     c1, c2, c3 = st.columns(3)
@@ -370,7 +335,6 @@ def display_metrics(metrics: dict):
     d1, d2 = st.columns(2)
     d1.metric("Under-Call", metrics["under_call"])
     d2.metric("Single-Shot Violation", metrics["single_shot_violation"])
-
     if metrics.get("rouge_l_f1") is not None or metrics.get("bertscore_f1") is not None:
         st.subheader("📝 Text Quality")
         t1, t2 = st.columns(2)
@@ -379,14 +343,9 @@ def display_metrics(metrics: dict):
         if metrics.get("bertscore_f1") is not None:
             t2.metric("BERTScore F1", f"{metrics['bertscore_f1']:.3f}")
 
-
-# ─────────────────────────────────────────────
-# Core chat handler (single unified function)
-# ─────────────────────────────────────────────
 def handle_chat(prompt: str, model_options: dict, selected_model_label: str):
     provider = st.session_state.api_provider
     client = get_active_client()
-
     if not client:
         st.error(f"No {provider} client. Please enter your API key in the sidebar.")
         return
@@ -407,13 +366,12 @@ def handle_chat(prompt: str, model_options: dict, selected_model_label: str):
                 st.session_state.messages,
                 st.session_state.selected_strategy,
                 enable_action_first=st.session_state.enable_action_first,
+                player_persona_name=st.session_state.selected_player_persona,
             )
-
             api_messages = [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt},
             ]
-
             model_name = get_active_model(model_options, selected_model_label)
             response_raw = get_llm_response(provider, client, api_messages, model_name)
 
@@ -430,20 +388,13 @@ def handle_chat(prompt: str, model_options: dict, selected_model_label: str):
 
     st.session_state.messages.append({"role": "assistant", "content": assistant_text})
 
-
-# ─────────────────────────────────────────────
-# Auto-initialize clients from env keys
-# ─────────────────────────────────────────────
 if st.session_state.groq_api_key and st.session_state.groq_client is None:
     st.session_state.groq_client = init_client("groq", st.session_state.groq_api_key)
 if st.session_state.openai_api_key and st.session_state.openai_client is None:
     st.session_state.openai_client = init_client("openai", st.session_state.openai_api_key)
 
-# ─────────────────────────────────────────────
-# Sidebar
-# ─────────────────────────────────────────────
 with st.sidebar:
-    st.title("⚙️ Configuration")
+    st.title("Configuration")
 
     provider = st.radio(
         "API Provider",
@@ -457,7 +408,6 @@ with st.sidebar:
 
     st.divider()
 
-    # API key input + model selector — unified for both providers
     if provider == "groq":
         model_options = GROQ_MODELS
         key_label, key_help, key_url = "GROQ API Key", "Get one free at https://console.groq.com/", "groq_api_key"
@@ -470,13 +420,12 @@ with st.sidebar:
         st.session_state[key_url] = api_key_input
         st.session_state[f"{provider}_client"] = init_client(provider, api_key_input)
         if st.session_state[f"{provider}_client"]:
-            st.success("✅ API key configured!")
+            st.success("API key configured!")
 
     selected_model_label = st.selectbox("Model", options=list(model_options.keys()), index=0)
 
     st.divider()
 
-    # Strategy
     st.subheader("🧠 Prompt Strategy")
     strategy_name = st.selectbox(
         "Choose strategy",
@@ -489,8 +438,7 @@ with st.sidebar:
 
     st.divider()
 
-    # Persona
-    st.subheader("🎭 Character")
+    st.subheader("🎭 NPC Character")
     persona_names = list(PERSONAS.keys())
     if persona_names:
         options_with_placeholder = ["-- Select a character --"] + persona_names
@@ -499,7 +447,7 @@ with st.sidebar:
         else:
             default_idx = 0
 
-        selected_persona_name = st.selectbox("Choose a Character", options=options_with_placeholder, index=default_idx)
+        selected_persona_name = st.selectbox("Choose an NPC", options=options_with_placeholder, index=default_idx)
         actual_selection = None if selected_persona_name == "-- Select a character --" else selected_persona_name
         if actual_selection != st.session_state.selected_persona:
             st.session_state.selected_persona = actual_selection
@@ -517,7 +465,30 @@ with st.sidebar:
 
     st.divider()
 
-    # Options
+    st.subheader("🧙 Your Player Persona")
+    player_persona_names = list(PLAYER_PERSONAS.keys())
+    player_options = ["-- No player persona --"] + player_persona_names
+    if st.session_state.selected_player_persona in player_persona_names:
+        player_default_idx = player_persona_names.index(st.session_state.selected_player_persona) + 1
+    else:
+        player_default_idx = 0
+
+    selected_player = st.selectbox("Choose your persona", options=player_options, index=player_default_idx)
+    actual_player = None if selected_player == "-- No player persona --" else selected_player
+    if actual_player != st.session_state.selected_player_persona:
+        st.session_state.selected_player_persona = actual_player
+        st.session_state.messages = []
+        st.rerun()
+
+    if st.session_state.selected_player_persona:
+        pp = PLAYER_PERSONAS[st.session_state.selected_player_persona]
+        with st.expander(f"About {pp['name']}"):
+            st.write(f"**Traits:** {', '.join(pp['traits'])}")
+            st.write(f"**Style:** {pp['communication_style']}")
+            st.write(f"**Wants:** {pp['wants']}")
+
+    st.divider()
+
     st.subheader("🔧 Options")
     enable_action_first = st.checkbox(
         "Enable ACTION-FIRST",
@@ -532,35 +503,35 @@ with st.sidebar:
         st.rerun()
     st.info(f"💬 {len(st.session_state.messages)} messages in chat")
 
-# ─────────────────────────────────────────────
-# Main chat UI
-# ─────────────────────────────────────────────
 if st.session_state.selected_persona:
     persona = PERSONAS[st.session_state.selected_persona]
+    player_label = f" · Speaking with: **{st.session_state.selected_player_persona}**" if st.session_state.selected_player_persona else ""
     st.title(f"🎮 {persona['name']}")
-    st.caption(f"*{persona['role']}* · {', '.join(persona['traits'])} · Strategy: **{st.session_state.selected_strategy}**")
+    st.caption(f"*{persona['role']}* · {', '.join(persona['traits'])} · Strategy: **{st.session_state.selected_strategy}**{player_label}")
 else:
-    st.title("🎮 CPDC 2025 — Persona Dialogue Agent")
+    st.title("🎮 CPDC 2025 -- Persona Dialogue Agent")
     st.markdown("""
 **A persona-grounded, task-oriented dialogue agent built for the Sony CPDC 2025 challenge.**
 
 This system lets you chat with RPG characters who can:
 - 🗡️ Retrieve live game data (quests, items, character stats, locations)
 - 🧠 Stay in-character using 4 different prompting strategies
+- 🧙 Adapt their tone based on **your** player persona
 - 📊 Evaluate itself in real-time using ROUGE-L and BERTScore
 
 **How to use:**
-1. 👈 Pick a character from the sidebar (e.g. Aether, Myst, Shadow)
-2. Choose a prompting strategy (Zero-Shot, Chain of Thought, etc.)
-3. Start chatting — try asking about quests, items, or character stats
+1. 👈 Pick an NPC character from the sidebar (e.g. Aether, Myst, Shadow)
+2. Pick **your** player persona (e.g. Red Witch, Aggressive Warrior)
+3. Choose a prompting strategy
+4. Start chatting -- watch how the NPC adapts to who you are!
 
 **Sample prompts to try:**
-> *"What are my character stats in Elden Ring?"*
-> *"Tell me about the Lost Artifact quest"*
-> *"What items can I find in the Dragon's Peak location?"*
-> *"Show me the Mage skill tree in Divinity"*
+- "What are my character stats in Elden Ring?"
+- "Tell me about the Lost Artifact quest"
+- "What items can I find in the Dragon's Peak location?"
+- "Show me the Mage skill tree in Divinity"
     """)
-    st.info("👈 Select a character from the sidebar to begin!")
+    st.info("👈 Select an NPC and your player persona from the sidebar to begin!")
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -568,13 +539,10 @@ for message in st.session_state.messages:
 
 if prompt := st.chat_input("Type your message here..."):
     if not st.session_state.selected_persona:
-        st.error("Please select a character from the sidebar first!")
+        st.error("Please select an NPC character from the sidebar first!")
     else:
         handle_chat(prompt, model_options, selected_model_label)
 
-# ─────────────────────────────────────────────
-# Batch Evaluation
-# ─────────────────────────────────────────────
 st.markdown("---")
 st.subheader("🧪 Batch Evaluation")
 
@@ -612,12 +580,12 @@ with eval_tab1:
                     chat_history=[],
                     strategy_name=st.session_state.selected_strategy,
                     enable_action_first=st.session_state.enable_action_first,
+                    player_persona_name=st.session_state.selected_player_persona,
                 )
                 messages = [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_utterance},
                 ]
-
                 model_name = get_active_model(model_options, selected_model_label)
                 pred_raw = get_llm_response(st.session_state.api_provider, client, messages, model_name)
 
@@ -698,6 +666,7 @@ with eval_tab2:
                         chat_history=[],
                         strategy_name=strategy,
                         enable_action_first=False,
+                        player_persona_name=st.session_state.selected_player_persona,
                     )
                     messages = [
                         {"role": "system", "content": system_prompt},
@@ -729,7 +698,6 @@ with eval_tab2:
                     st.metric("Over-Call", f"{summary['over_call']:.3f}" if summary["over_call"] is not None else "-")
                     st.metric("Under-Call", f"{summary['under_call']:.3f}" if summary["under_call"] is not None else "-")
 
-            # Combined downloadable CSV
             df_all = pd.DataFrame(results[strategy_a] + results[strategy_b])
             csv = df_all.to_csv(index=False).encode("utf-8")
             st.download_button(
