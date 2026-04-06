@@ -175,4 +175,4 @@ Key finding: The model correctly identifies which function to call 93% of the ti
 
 **Tejaharshita Mullapudi**
 M.S. Information Systems, George Mason University
-[GitHub](https://github.com/tmullapu) · [LinkedIn](www.linkedin.com/in/mullapuditejaharshita)
+[GitHub](https://github.com/tmullapu) · [LinkedIn](https://www.linkedin.com/in/mullapuditejaharshita)
