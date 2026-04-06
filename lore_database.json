@@ -1,0 +1,331 @@
+[
+  {
+    "id": "ER-LOC-001",
+    "game": "Elden Ring",
+    "category": "location",
+    "name": "Dragon's Peak",
+    "text": "Dragon's Peak rises above the Altus Plateau like a wound in the sky — a scorched ridge of blackened stone where ancient dragons once gathered to die. The air reeks of sulfur and old ash. Three Farum Azula wyverns nest in its upper crags, territorial and aggressive to anything that moves. Scattered across the lower slopes are the ossified remains of previous challengers, their weapons still clutched in fossilized hands. A narrow path winds through the western face, partially obscured by collapsed rock, leading to a sealed chamber where the Drake Knight's Talisman rests on a crumbling altar. The recommended level is 60 or higher. Bring fire resistance and a bow — the wyverns are vulnerable to lightning at range but devastating in melee."
+  },
+  {
+    "id": "ER-LOC-002",
+    "game": "Elden Ring",
+    "category": "location",
+    "name": "Arcane Hollow",
+    "text": "Arcane Hollow is a cavern system beneath the Weeping Peninsula, accessible through a collapsed well near the Church of Pilgrimage. Its walls pulse with a faint blue luminescence — residue from the ancient sorceries practiced here by the scholars of Caria before the Shattering. Spectral knights patrol its corridors, bound by oath to guard the arcane tomes left behind. The deeper chambers flood with waist-high ectoplasmic liquid that slows movement and drains focus. At its heart stands the Arcane Womb — a crystalline formation that hums with imprisoned souls. Defeating the Hollow Archon boss unlocks a passage to a hidden portion of Liurnia not shown on the main map."
+  },
+  {
+    "id": "ER-LOC-003",
+    "game": "Elden Ring",
+    "category": "location",
+    "name": "Emberfall Fortress",
+    "text": "Emberfall Fortress was once a garrison of the Golden Order, stationed beyond the Ashen Coast to repel incursions from the Badlands. When the Shattering came, the soldiers were transformed — not into undead, but into Flame Golems, their bodies fused with living fire as punishment for an act of heresy no one now remembers. The fortress walls still hold, scorched black and radiating heat visible from a mile away. Inside, cascading fire pits trap the unwary. The commander, the Ember Lord Vael, patrols the central courtyard and drops the Crest of Burning Resolve upon death — a key item for the Crumbling Farum Azula questline."
+  },
+  {
+    "id": "ER-LOC-004",
+    "game": "Elden Ring",
+    "category": "location",
+    "name": "Hollowroot Trail",
+    "text": "Hollowroot Trail cuts through the deepest part of the Mistwood, where the trees grow so dense that daylight never reaches the ground. The trail itself is ancient — carved by the Crucible Knights before the Age of the Erdtree. Twisted roots breach the path constantly, some as thick as castle walls, some moving with unsettling slowness. Cave trolls have made a home here, but they are the least of the dangers. The Hollow Stalker, an invisible predator that hunts by sound, territories the midpoint of the trail. Travelers who survived recommend wrapping their boots in cloth and moving in absolute silence past the blighted oak at the trail's center."
+  },
+  {
+    "id": "ER-LOC-005",
+    "game": "Elden Ring",
+    "category": "location",
+    "name": "Cinderheart Crater",
+    "text": "Cinderheart Crater is a massive impact site in the Mountaintops of the Giants, formed when a fragment of the Elden Ring fell during the Shattering. The crater floor glows with residual golden energy that mutates any creature dwelling within. Giant crabs with crystalline shells patrol the rim, while the center houses a nest of Magma Wyrms drawn to the heat. The Cinderheart Stone found at the crater's absolute center is a key crafting material for the highest-tier incantation catalysts. At night, the crater emits a column of golden light visible from the Erdtree itself — many believe it to be a calling signal for something still dormant beneath."
+  },
+  {
+    "id": "SK-LOC-001",
+    "game": "Skyrim",
+    "category": "location",
+    "name": "Frostbound Cave",
+    "text": "Frostbound Cave is carved into the glacial cliffs north of Winterhold, accessible only when the coastal ice shelf is frozen solid — typically from Frostfall through First Seed. The cave was used by ancient Atmorans as a ritual site for communing with the Storm Atronachs. Now it houses a coven of ice wraiths and two frost trolls that have grown to unusual size from feeding on travelers who underestimated the cold. The deepest chamber contains a Word Wall bearing the Shout word for Ice Form, partially obscured by a millennia of frost buildup. A Khajiit merchant named Ri'saad once hid a cache of moonsugar and raw ebony here — his journal, recoverable from a bandit camp in Eastmarch, gives the exact location within the cave."
+  },
+  {
+    "id": "SK-LOC-002",
+    "game": "Skyrim",
+    "category": "location",
+    "name": "Sanctum of Dawn",
+    "text": "The Sanctum of Dawn sits atop Sunspike Peak in the Reach, built by a forgotten order of Meridia's paladins who sought to purify the mountain of the Forsworn taint. The order failed — corrupted by a Hagraven's curse and transformed into hollow shades that drift through the sanctum's gilded halls. The architecture is striking: vaulted ceilings inlaid with sun motifs in gold leaf, most still gleaming despite centuries of abandonment. A beacon at the sanctum's apex still burns with Meridia's light, and standing within it grants temporary immunity to disease. The sanctum contains three locked vaults accessible only with keys found on specific shade variants — each vault holds a piece of the Dawnguard Sentinel armor set."
+  },
+  {
+    "id": "SK-LOC-003",
+    "game": "Skyrim",
+    "category": "location",
+    "name": "Obsidian Library",
+    "text": "The Obsidian Library is a Dwemer archive buried beneath Blackreach, connected to the main cavern by a tram system that still functions with a push of the correct lever sequence. The Dwemer sealed it separately from the rest of their excavations — scholars believe it housed forbidden texts related to their soul-essence experiments. The library's shelves are carved from volcanic glass, perfectly preserved. The texts themselves are written in Elder Dwemeris, untranslatable by most, but three volumes of unusual clarity rest on a central table: a bestiary, an alchemical codex, and a partial account of the Numidium project written in plain Tamrielic. Falmer blind-watchers patrol the stacks, attracted by light sources."
+  },
+  {
+    "id": "SK-LOC-004",
+    "game": "Skyrim",
+    "category": "location",
+    "name": "Windscar Ridge",
+    "text": "Windscar Ridge runs along the northeastern border of Skyrim, where the land drops sharply into the Sea of Ghosts. Constant gale-force winds make standing upright difficult and archery nearly impossible — arrows veer unpredictably and even shouts are deflected. A clan of Harpies has nested in the ridge's upper crags for at least two generations, and their nests contain a remarkable collection of stolen trinkets from shipwrecks below. The ridge itself is historically significant: it is where the ancient Nord hero Hrothmund drew the boundary line of his territory. A runestone marking this boundary still stands, and activating it while speaking his name summons his spirit for a brief council."
+  },
+  {
+    "id": "SK-LOC-005",
+    "game": "Skyrim",
+    "category": "location",
+    "name": "Ashen Basin",
+    "text": "The Ashen Basin lies south of Rorikstead, in a depression formed by volcanic collapse centuries before recorded history. The ground is permanently warm, cracked into hexagonal tiles of grey stone through which wisps of sulfurous steam escape. The few plants that grow here are fire-adapted: ash bloom, charcoal grass, and ember cap mushrooms — all valuable alchemical ingredients. Three flame atronachs have formed a territorial circuit around the basin's center, where a petrified dragon skeleton half-buried in ash still radiates residual heat. Breaking open the dragon's skull reveals a chamber containing a Black Book left by Hermaeus Mora — an unexpected and disorienting discovery in an otherwise mundane location."
+  },
+  {
+    "id": "DIV-LOC-001",
+    "game": "Divinity: Original Sin 2",
+    "category": "location",
+    "name": "Meadow of Songs",
+    "text": "The Meadow of Songs lies east of Driftwood along the Reaper's Coast, in a valley sheltered from the coastal winds by ancient standing stones that hum with Source energy. The meadow glows at dusk with bioluminescent flowers called Aeternae blooms — they only open at night and emit a soft chiming sound that has been known to calm even Void-touched creatures. The standing stones themselves are a puzzle: arranging Source activation in the correct sequence opens a chamber beneath the central stone, containing a Source orb of unusual potency and a letter from a dead Sourcerer who had discovered the meadow's true purpose as a Source anchor — a stabilizing point that kept the Voidwoken from breaching in this region."
+  },
+  {
+    "id": "DIV-LOC-002",
+    "game": "Divinity: Original Sin 2",
+    "category": "location",
+    "name": "Lute Maker's Quarter",
+    "text": "The Lute Maker's Quarter occupies the southeastern district of Arx, tucked between the harbor wall and the Scholar's Row. Three master craftsmen maintain workshops here, each specializing in a different instrument tradition: Elven resonance harps, Human percussion lutes, and Dwarven war drums. The quarter is one of the few neutral spaces in Arx — even Black Ring agents have been known to commission instruments here, as the craftsmen hold a generations-old neutrality pact. The eldest craftsman, a blind elf named Sylvara, is also a covert Sourcerer who uses her instrument-tuning as cover for Source readings. She can detect Void corruption in items brought to her, and her workshop conceals a hidden room containing artifacts confiscated from Void-touched musicians."
+  },
+  {
+    "id": "DIV-LOC-003",
+    "game": "Divinity: Original Sin 2",
+    "category": "location",
+    "name": "Silent Athenaeum",
+    "text": "The Silent Athenaeum clings to a clifftop at the edge of the Nameless Isle, accessible only by a rope bridge that sways dangerously over a three-hundred-foot drop. It was built by a sect of Sourcerer monks who believed that absolute silence amplified Source perception — they communicated only in writing and sealed their mouths with wax during meditation. The monks are long dead, killed by a Source surge that petrified them mid-meditation. Their bodies still sit at their desks, stone hands still holding quill pens. The library's collection is extraordinary: seven original Divinity texts, a complete Source technique manual, and Braccus Rex's personal correspondence with Dallis before the war — revealing that the relationship was more complicated than history recorded."
+  },
+  {
+    "id": "DIV-LOC-004",
+    "game": "Divinity: Original Sin 2",
+    "category": "location",
+    "name": "Veilrift Spire",
+    "text": "Veilrift Spire rises from a sea cliff on the northern edge of Reaper's Coast, its stones an unusual translucent grey that shift color with the light — from silver at dawn to deep violet at dusk. The spire was built at a location where the barrier between the mortal realm and the Veil is naturally thin, making it ideal for divination magic and Source amplification. The current occupant is a Sourcerer named Morvaine who has spent forty years attempting to peer through the Veil into the realm of the Void — her notes, scattered throughout the spire, document increasingly unstable observations as the boundary weakened with each attempt. The top floor has partially phased into an in-between state: some objects exist in both planes simultaneously, appearing translucent and casting double shadows."
+  },
+  {
+    "id": "BG-LOC-001",
+    "game": "Baldur's Gate 3",
+    "category": "location",
+    "name": "Whispering Glade",
+    "text": "The Whispering Glade spreads through a protected valley in the Emerald Grove's outer reaches, where ancient Druidic wards have kept the Absolute's corruption at bay longer than anywhere else in the region. Silver-barked trees grow in perfect concentric rings, their leaves a luminescent pale green even in deepest night. Pixies and sprites have established a small court here, led by a pixie duchess named Tirvanna who collects secrets as currency. The glade's center contains a moonwell — a pool of enchanted water that reflects not the sky above but a different night entirely: the night of the Companions' founding, frozen in magical memory. Drinking from the pool grants visions but also a temporary vulnerability to Illithid influence."
+  },
+  {
+    "id": "BG-LOC-002",
+    "game": "Baldur's Gate 3",
+    "category": "location",
+    "name": "Radiant Amphitheater",
+    "text": "The Radiant Amphitheater is built into a natural hillside just outside Baldur's Gate's upper city walls, its stone seating carved from a single continuous piece of pale granite that acousticians still study for its perfect sound distribution. Performances here once drew the city's elite; the theater hosted the premiere of forty-three of Faerun's most celebrated bardic compositions. Now, with the Absolute's shadow over the city, the amphitheater has become a gathering point for refugees who find comfort in the remnants of normalcy. A troupe of Harpers uses it as a meeting point, using the language of theatrical criticism as code. Beneath the stage, accessible through a trapdoor disguised as a set piece, lies a Harper safehouse with maps of every known Absolute cult location in the city."
+  },
+  {
+    "id": "BG-LOC-003",
+    "game": "Baldur's Gate 3",
+    "category": "location",
+    "name": "Mirrorhall Archive",
+    "text": "The Mirrorhall Archive occupies four underground floors beneath the University of Baldur's Gate, a private collection belonging to the university's Department of Memory and Cognition. Its name comes from its walls, lined floor to ceiling with enchanted mirrors that store memories rather than reflections — each mirror contains the preserved recollection of a scholar who donated their mind's contents upon death. Navigating the archive requires learning the catalog system: mirrors are organized not by subject but by emotional resonance, meaning related memories cluster together based on feeling rather than content. The deepest floor contains sealed mirrors holding dangerous memories — specifically, the collected knowledge of three Illithid defectors who died attempting to resist the Elder Brain."
+  },
+  {
+    "id": "BG-LOC-004",
+    "game": "Baldur's Gate 3",
+    "category": "location",
+    "name": "Black Dagger Den",
+    "text": "The Black Dagger Den operates from a cellar beneath an unremarkable chandler's shop in the Lower City's Steelwatch district. The entrance requires knowing the correct knock sequence and giving a passphrase that changes weekly — obtained from a contact at the Blushing Mermaid tavern. Inside, the den functions as a neutral ground for the city's criminal factions: contracts are posted, disputes are arbitrated, and a surprisingly good stew is served at all hours. The den's real value is its information network — the proprietor, a halfling named Corbin Twice-Named, maintains contacts in the city guard, the Flaming Fist, and three noble houses. He sells information at significant cost but with absolute accuracy."
+  },
+  {
+    "id": "ER-ITEM-001",
+    "game": "Elden Ring",
+    "category": "item",
+    "name": "Drake Knight's Talisman",
+    "text": "The Drake Knight's Talisman is a carved dragon scale the size of a palm, rimmed in tarnished gold and hung on a chain of fused dragon teeth. It was crafted by the Drake Knights of Farum Azula as a symbol of their covenant with the ancient dragons — a pledge to protect dragonkind's memory after the dragons themselves had all but vanished. Wearing it raises maximum equip load by 12% and grants a 7% damage bonus when fighting near the corpses of large enemies. It also has a hidden effect: in areas where dragon enemies are present, it reduces their aggression radius by roughly 30%, making stealth approaches significantly more viable. Finding it requires navigating the collapsed eastern wing of Dragon's Peak without a lantern, as the Drake Knights sealed the path specifically to deter light-bearing intruders."
+  },
+  {
+    "id": "ER-ITEM-002",
+    "game": "Elden Ring",
+    "category": "item",
+    "name": "Emberheart Robe",
+    "text": "The Emberheart Robe is a chest piece fashioned from fire-treated leather and woven with threads of crystallized magma harvested from active vents in Mt. Gelmir. It was designed by Sorcerer Rykard's personal tailors for the scholars who studied flame sorceries in his court — practical protection for those who worked with volatile magical fire daily. Its defense values are modest (50 physical, 72 fire), but the fire absorption of 37% and the passive bonus of +8 to fire incantation and sorcery scaling make it exceptional for pyromancy builds. The robe's most unusual property is its heat regulation: it keeps the wearer at a comfortable temperature regardless of environmental heat, making it comfortable in both Mt. Gelmir's volcanic zones and the cold peaks of the Mountaintops."
+  },
+  {
+    "id": "SK-ITEM-001",
+    "game": "Skyrim",
+    "category": "item",
+    "name": "Starweaver Staff",
+    "text": "The Starweaver is a staff of Atmoran origin, recovered from the ruins of Saarthal during the College of Winterhold's excavation. It is fashioned from bleached mammoth ivory wrapped in silver wire, topped with a lens of compressed starlight — a magical phenomenon created by ancient Nordic wizards who learned to harvest ambient light from the night sky and compress it into solid form. When activated, it fires a concentrated beam of argent radiance that deals 45 points of arcane damage and has a 25% chance to briefly stagger opponents. Against undead, its effectiveness doubles, and it produces a secondary halo effect that prevents re-animation of killed undead for 60 seconds. Recharging it requires either a grand soul gem or standing under open sky on a clear night, during which it passively recharges from starlight."
+  },
+  {
+    "id": "SK-ITEM-002",
+    "game": "Skyrim",
+    "category": "item",
+    "name": "Silverwind Lute",
+    "text": "The Silverwind Lute is a masterwork instrument crafted by the legendary Breton lutier Amaund Gauthier during the Second Era. Its body is carved from a single piece of heartwood from a Valenwood ancient tree, its strings wound from silver-threaded silk. When played, it produces a tone of unusual clarity and warmth that carries further than any natural instrument. As an enchanted item, playing it for at least 30 seconds in a populated area generates a passive speechcraft bonus of +25 for the following hour, and NPCs who witness the performance have their disposition toward the player increased by 15 points. Bards who carry it find that their Inspiration ability recharges 20% faster. It can also be used to calm hostile wildlife — not through an enchantment, but because the specific resonance of the heartwood mimics Valenwood bird calls that signal safety."
+  },
+  {
+    "id": "DIV-ITEM-001",
+    "game": "Divinity: Original Sin 2",
+    "category": "item",
+    "name": "Sparkblaster Cannon",
+    "text": "The Sparkblaster Cannon is a Dwarvish-engineered crossbow of unusual design, its limbs constructed from reinforced copper and its stock housing a Source crystal battery that powers the weapon's electrical enhancement system. When fired, the bolt passes through a charged chamber that wraps it in lightning energy before release. On impact, it deals physical damage from the bolt and electrical damage from the charge, and if the target is standing in water, it triggers a chain lightning effect that jumps to all enemies within 5 meters. The cannon requires recharging every 12 shots — accomplished by exposing the battery compartment to a lightning-based attack, meaning a friendly mage firing a lightning bolt at the weapon (while unequipped) will restore a full charge. It was built by the Dwarvish artificer Hrobgar Irontongue as a commission for a mercenary company that subsequently dissolved."
+  },
+  {
+    "id": "DIV-ITEM-002",
+    "game": "Divinity: Original Sin 2",
+    "category": "item",
+    "name": "Lexicon of Stars",
+    "text": "The Lexicon of Stars is a tome of intermediate complexity in the tradition of Rivellon's celestial magic school — a practice that draws on the positions of stars and constellations to enhance spellcasting. It contains twelve complete rituals, each tied to a different constellation, and a theoretical framework for aligning spell timing with stellar events. Reading it fully (requiring three in-game rests) grants a permanent +2 bonus to Intelligence and unlocks the Constellation Alignment passive ability: once per long rest, the caster can declare a Celestial Hour, during which all spells cost 1 less AP for 2 rounds. The tome also functions as a calendar of upcoming significant celestial events, some of which trigger unique dialogue with certain NPCs who are aware of stellar magic."
+  },
+  {
+    "id": "BG-ITEM-001",
+    "game": "Baldur's Gate 3",
+    "category": "item",
+    "name": "Emberheart Robe",
+    "text": "The Emberheart Robe found in Baldur's Gate is a different artifact from its Elden Ring namesake — a relic of the Arcane Brotherhood's pyromancy division, woven from Neverwinter fire-silk and reinforced with the shed scales of a red dragon hatchling. It provides 12 AC when unarmored and grants resistance to fire damage. Its primary enchantment boosts fire spell damage by 2d4 per spell cast, and wearing it for more than one long rest consecutively causes the wearer to develop a temporary affinity with fire elementals — they become non-hostile unless attacked first. The robe was catalogued in the Archive of the Brotherhood but disappeared during the Spellplague; its current presence in the Baldur's Gate region suggests it traveled with a Brotherhood survivor whose fate is unknown."
+  },
+  {
+    "id": "ER-QUEST-001",
+    "game": "Elden Ring",
+    "category": "quest",
+    "name": "Oath of the Fallen",
+    "text": "Oath of the Fallen begins when the player discovers a scarred war banner planted in the earth near the Stormhill Shack site of grace — its design marks it as belonging to the Crucible Knights who fell defending Stormveil Castle during the Shattering. Speaking with the ghost of Knight-Captain Hromund near the banner initiates the quest. He tasks the player with recovering three fallen knights' crests from the battlefield below, returning proper burial rites to warriors who died without honor. Each crest is guarded by a shade of the knight themselves — corrupted by grief into hostile specters. Completing all three rituals and returning to Hromund rewards the Crucible Feather Talisman and unlocks a hidden spectral merchant who trades in ancient Golden Order armaments not found elsewhere in the game."
+  },
+  {
+    "id": "ER-QUEST-002",
+    "game": "Elden Ring",
+    "category": "quest",
+    "name": "Banner of the Brave",
+    "text": "Banner of the Brave is a questline that begins in Leyndell, Royal Capital, when the player finds a collapsed soldier of the Golden Order named Vael near the Avenue Balcony site of grace. He is searching for his company's banner, which was lost when their formation broke during the siege. The banner itself is held by a Leyndell Knight who survived the battle and descended into madness — he now patrols the lower sewers of the city, carrying it as a totem. Recovering it and returning to Vael restores his sense of duty; he rallies three other survivors who then defend a path through the capital's southern district, making a previously blocked route accessible. The banner, when displayed at the Avenue Balcony, triggers a unique event where golden spectral soldiers reenact the original formation — revealing a hidden passage behind their formation's rear position."
+  },
+  {
+    "id": "SK-QUEST-001",
+    "game": "Skyrim",
+    "category": "quest",
+    "name": "Forgotten Echoes",
+    "text": "Forgotten Echoes is a quest that begins when the player reads a partially burned journal found in Dawnstar's Windpeak Inn, written by a scholar who heard music coming from a sealed Nordic barrow outside the city. Investigating the barrow reveals it to be the tomb of Ulfgar the Undying, a Nordic bard-warrior of the First Era who was entombed alive at his request — he wanted to compose until his last breath. His music has persisted as a spectral echo in the barrow's stone, audible but fading. The quest involves restoring the acoustic resonance of five specific chambers by placing tuning stones (found in the barrow's traps) in their correct positions. Completing it fully manifests Ulfgar's spirit, who teaches the Shout word for Aura Whisper and gives the player his lute, which functions as a permanent Speechcraft boost item."
+  },
+  {
+    "id": "SK-QUEST-002",
+    "game": "Skyrim",
+    "category": "quest",
+    "name": "Hunter's Moon",
+    "text": "Hunter's Moon is a quest available only during the full moon, obtained from a Companions member in Whiterun who mentions rumors of a legendary white elk seen north of Riverwood. The elk — called the Pale Hunter — is not aggressive but extraordinarily elusive, moving faster than a horse and leaving no tracks. Tracking it requires the Ranger's Eye ability, unlocked by completing three Companions hunting contracts first. Following the Pale Hunter over three nights leads to a grove hidden behind a waterfall in the mountains above Riverwood, where a camp of ancient Nord hunters has been preserved in magical stasis. Waking them triggers a conversation quest about the nature of the hunt. The Pale Hunter, once found at the grove, stands still and allows itself to be observed — granting the Steady Eye power, which permanently improves archery damage by 10%."
+  },
+  {
+    "id": "DIV-QUEST-001",
+    "game": "Divinity: Original Sin 2",
+    "category": "quest",
+    "name": "Flames of Rebirth",
+    "text": "Flames of Rebirth begins on the Reaper's Coast when the party encounters a dying fire spirit named Ignus near an extinguished pyre on the cliffs above Driftwood. Ignus was bound to the pyre centuries ago by a Sourcerer who used him to power a Source beacon — when the Sourcerer died, the binding remained but the fuel ran out. He cannot die and cannot live without flame. The quest involves sourcing three rare fire essences: one from a Phoenix egg in the Blackpits, one from a Magister's contraband fire crystal, and one from a voluntary donation of Source from a party member. Reigniting the pyre fully restores Ignus, who becomes a powerful ally: he can be summoned once per combat as a non-controllable fire elemental ally, and he permanently purges Void corruption from a small area around any campfire the party uses."
+  },
+  {
+    "id": "DIV-QUEST-002",
+    "game": "Divinity: Original Sin 2",
+    "category": "quest",
+    "name": "Ballad of Broken Strings",
+    "text": "Ballad of Broken Strings is a questline centered on Arx's Lute Maker's Quarter, beginning when the player discovers that the district's eldest craftsman has gone silent — refusing to speak, eat, or work. His apprentice explains that he heard a piece of music played by a cursed lute that stole his creative voice. The cursed lute, the Silencer, was commissioned by a jealous noble who wanted to destroy a rival bard's career. Finding the Silencer requires negotiating with the city's black market. Destroying it requires a ritual combining the player's Source with the emotional resonance of an original composition — meaning the player must choose dialogue options that generate a coherent emotional theme across four conversations, which is then magically encoded into the destruction ritual. Completing the quest restores the craftsman and unlocks the ability to commission custom instrument enchantments."
+  },
+  {
+    "id": "BG-QUEST-001",
+    "game": "Baldur's Gate 3",
+    "category": "quest",
+    "name": "Scholar's Burden",
+    "text": "Scholar's Burden begins when the player finds a frantic professor at the Baldur's Gate university who has accidentally bound a dangerous entity — a Thought Collector, a creature that feeds on the intellectual energy of scholars — inside a sealed manuscript. The manuscript is deteriorating and will release the creature within two long rests. The quest involves finding the correct banishment ritual, which requires three components: a page from the original summoning contract (hidden in the university's restricted archive), an anti-cognitive reagent (purchased from a specific alchemist in the Lower City), and a Silence spell cast during a specific moon phase. Failing to gather all components in time releases the Thought Collector, which begins draining intelligence from every NPC in the university district — an irreversible consequence that changes multiple later questlines."
+  },
+  {
+    "id": "BG-QUEST-002",
+    "game": "Baldur's Gate 3",
+    "category": "quest",
+    "name": "Heart of the Vanguard",
+    "text": "Heart of the Vanguard is a questline that becomes available after the player reaches Act 3 and discovers that a key regiment of Baldur's Gate city guards has been compromised by Absolute cultists. The commanding officer, Captain Brennan, is secretly loyal to the player but cannot act openly without evidence. The quest involves infiltrating three different cult cells embedded in the city guard, gathering testimony from guards who want to defect, and ultimately staging a coordinated reveal at a city council meeting. The player must manage the timing carefully — moving too fast alerts the cult, too slow allows them to purge the defectors. Successfully exposing the cult and rallying Brennan's regiment provides a military force for the game's final battle and unlocks a unique ending variation where the city is defended without significant civilian casualties."
+  },
+  {
+    "id": "ER-RECIPE-001",
+    "game": "Elden Ring",
+    "category": "recipe",
+    "name": "Mystic Focus Potion",
+    "text": "The Mystic Focus Potion is a consumable that temporarily raises intelligence scaling on all equipped weapons and catalysts by 15% and reduces FP cost of sorceries by 20% for 90 seconds. It was developed by Carian scholars as a battle preparation tonic for sorcerer-knights who needed to transition between melee and casting fluidly. The recipe requires three Faded Lilies, harvested from the moonlit shores of Liurnia only after midnight; five grams of Rune-Dust, obtained by grinding a Glintstone Shard in a Carian mortar; and two drops of Crystal Sap, tapped from the crystalline formations in Sellia, Town of Sorcery. Brewing requires the Carian Infusion Kit, sold by Seluvis before his questline ends. The potion cannot be purchased and must be crafted — making it a rare sight in most playthroughs."
+  },
+  {
+    "id": "SK-RECIPE-001",
+    "game": "Skyrim",
+    "category": "recipe",
+    "name": "Hero's Tonic",
+    "text": "Hero's Tonic is a powerful stamina-and-health restoration potion with roots in ancient Nord alchemical tradition, traditionally brewed before major battles. Its effects restore 75 points of health and 60 points of stamina instantly, and provide a 25% increase to carrying capacity for 3 minutes — useful for looting after combat. The ingredients are: two handfuls of Tundra Cotton, found on the plains outside Whiterun; three Mountain Flowers, preferably the red variant for maximum potency; and a small piece of Troll Fat, obtained from any cave troll. The unusual third ingredient is what distinguishes this from standard healing potions — Troll Fat contains a regenerative enzyme that amplifies the restorative effects of the botanical components. Alchemists with the Benefactor perk find that the tonic's duration extends to 5 minutes."
+  },
+  {
+    "id": "SK-RECIPE-002",
+    "game": "Skyrim",
+    "category": "recipe",
+    "name": "Tracker's Tonic",
+    "text": "Tracker's Tonic is a specialized ranger's brew that enhances perception and reflexes for hunting. It provides Night Eye for 60 seconds, increases detection range for tracks and environmental details, and raises bow damage by 15% for 2 minutes. The recipe comes from the Companions' hunting tradition and is not in any standard alchemy book — it must be learned from a Companions member or found in the notes of a hunter's camp. Ingredients: Forest Reed, found along riverbanks in Falkreath Hold; Sharpened Thistle, a cultivated plant grown only in the Riften greenhouse district; and Beast Blood, harvested from any large predator (bear, sabre cat, or werewolf). The Beast Blood must be fresh — older than 48 in-game hours and it loses its potency, resulting in a weaker version of the tonic with no archery bonus."
+  },
+  {
+    "id": "DIV-RECIPE-001",
+    "game": "Divinity: Original Sin 2",
+    "category": "recipe",
+    "name": "Voltbomb Mixture",
+    "text": "Voltbomb Mixture is a throwable explosive crafted in the tradition of Dwarvish battlefield alchemy. On impact, it creates a 3-meter area of charged air that deals 80-120 lightning damage to anyone caught in the initial blast and applies the Shocked status — reducing their Lightning Resistance by 20% for 2 turns. If thrown onto a water surface, it triggers a Thunderstorm effect in a 5-meter radius instead, dealing damage repeatedly over 3 turns. The recipe requires Shock Powder (purchased from Dwarf merchants or found in Blackpits crates), Thick Oil (rendered from raw fat using a cooking pot), and Scrap Metal (found abundantly in Dwarvish excavation areas). Unlike most grenades, the Voltbomb must be shaken before throwing — selecting it in the hotbar while moving triggers this automatically, but equipping it while stationary requires manually activating the primer."
+  },
+  {
+    "id": "DIV-RECIPE-002",
+    "game": "Divinity: Original Sin 2",
+    "category": "recipe",
+    "name": "Elixir of Insight",
+    "text": "The Elixir of Insight is a potion of the mind-enhancement tradition, used by Sourcerer scholars before rituals requiring heightened perception of Source flows. It provides +3 to Loremaster checks for 4 turns, allows the drinker to perceive invisible Source signatures on objects and people, and grants the ability to read Dwemer and Ancient Elvish script for the duration. The recipe requires Dreamroot, a rare deep-forest herb that grows only in areas with strong Source resonance (most reliably found on the Nameless Isle); Crushed Memory Crystals, obtained by breaking down Memory Amulets at a mortar; and Distilled Water — ordinary water passed through a purification ritual at any shrine of the Seven Gods. The elixir's effects are cumulative with concentration-boosting spells but cancel out with alcohol-based buffs."
+  },
+  {
+    "id": "ER-SKILL-001",
+    "game": "Elden Ring",
+    "category": "skill_tree",
+    "name": "Warrior",
+    "text": "The Warrior class in Elden Ring begins with the highest dexterity starting stat in the game at 16, paired with 12 strength and 11 endurance, making it the optimal foundation for a fast, aggressive melee build. The early game prioritizes Scimitar and buckler combinations — the default loadout — which enable L1 combination attacks and shield pressure simultaneously. As the build develops, Warriors typically invest in the Dexterity tree toward the 60-point soft cap for maximum scaling, supplemented by endurance investments to extend roll and attack chains. Key skill acquisitions are: Bloodhound's Step at medium Arcane investment (unlocking near-invisible dodge frames), Seppuku for blood loss buildup on weapons, and the Flowing Form ash of war for mid-combat repositioning. Endgame Warrior builds often dual-wield curved swords for the L1 bleed combo that has become iconic in competitive Elden Ring play."
+  },
+  {
+    "id": "SK-SKILL-001",
+    "game": "Skyrim",
+    "category": "skill_tree",
+    "name": "Rogue",
+    "text": "The Rogue skill tree in Skyrim is built across four primary disciplines: Sneak, One-Handed, Archery, and Light Armor, with Pickpocket and Lockpicking as supporting trees. The defining perk is Shadow Warrior in the Sneak tree (requiring Sneak 50), which allows the player to re-enter stealth mid-combat by crouching, breaking enemy targeting. This enables the Sneak Attack bonus to apply repeatedly on the same enemy in a single encounter. One-Handed Rogue builds prioritize the Dual Flurry and Dual Savagery perks, which combine for 50% faster dual attack speed and double sneak attack multipliers. Archery Rogues focus on the Quiet Casting prerequisite from Illusion, allowing all spells to be cast silently. The endgame Rogue build typically merges Assassin's Blade (15x sneak attack dagger multiplier), Muffled Movement, and the Agent of Shadow Daedric blessing for a character that can solo any encounter from stealth."
+  },
+  {
+    "id": "SK-SKILL-002",
+    "game": "Skyrim",
+    "category": "skill_tree",
+    "name": "Paladin",
+    "text": "The Paladin build in Skyrim is a hybrid construct drawing from Heavy Armor, One-Handed, Block, and Restoration, with Enchanting as the force multiplier. It has no single dedicated skill tree but is defined by the interaction of its components. The core survivability comes from Heavy Armor's Conditioning perk (no movement penalty) combined with Juggernaut (100% armor improvement) and the Restoration school's Regeneration and Recovery perks, which make the Paladin essentially self-sustaining in prolonged fights. Offensive output centers on the Turn Undead and Guardian Circle Restoration spells layered with enchanted weapons bearing Banish and Soul Trap. The signature Paladin playstyle involves opening with Circle of Protection to establish a safe zone, then engaging enemies with shield and one-handed weapon in a defensive posture. Champion's Stance from Block makes power attacks cost 25% less stamina, essential for prolonged combats."
+  },
+  {
+    "id": "BG-SKILL-001",
+    "game": "Baldur's Gate 3",
+    "category": "skill_tree",
+    "name": "Bard",
+    "text": "The Bard in Baldur's Gate 3 is built around Charisma as its primary stat, with College selection at level 3 defining its combat identity. College of Lore Bards gain Cutting Words — a reaction that reduces enemy attack rolls, ability checks, and damage rolls by rolling a Bardic Inspiration die — making them exceptional at debuffing. College of Swords Bards gain Blade Flourish, enabling melee weapon attacks that consume Bardic Inspiration for bonus effects: pushing enemies back, gaining AC, or dealing extra damage. The Bard's unique mechanical strength is its spell list, which draws from every class via Magical Secrets at levels 6 and 10. Common Magical Secrets picks include Animate Dead (sustain), Hunger of Hadar (crowd control), and Counterspell (defensive utility). Charisma-based skill checks — Persuasion, Deception, Intimidation, and Performance — all receive proficiency bonuses, making the Bard the strongest conversation character in the game."
+  },
+  {
+    "id": "BG-SKILL-002",
+    "game": "Baldur's Gate 3",
+    "category": "skill_tree",
+    "name": "Wizard",
+    "text": "The Wizard in Baldur's Gate 3 uses Intelligence as its primary stat and is defined by Arcane Recovery — regaining spell slots on a short rest — and its unique ability to scribe spells from scrolls into its spellbook, giving it the broadest spell access of any class. School selection at level 2 shapes the subclass: Evocation Wizards gain Sculpt Spells (protecting allies in AoE spells) and Potent Cantrip (dealing half damage even on missed cantrip attacks); Abjuration Wizards build an Arcane Ward that absorbs damage; Necromancy Wizards animate the dead with bonus hit points. The endgame Wizard build prioritizes Intelligence to 20 via Ability Score Improvements, the War Caster feat for concentration maintenance, and Spell Sniper for extended range. Signature combat rotation: Hypnotic Pattern or Hold Monster to lock enemies, followed by Fireball or Chain Lightning for maximum area damage on incapacitated targets."
+  },
+  {
+    "id": "BG-SKILL-003",
+    "game": "Baldur's Gate 3",
+    "category": "skill_tree",
+    "name": "Ranger",
+    "text": "The Ranger in Baldur's Gate 3 focuses on Dexterity and Wisdom, with Favored Enemy and Natural Explorer providing passive bonuses from level 1. Beast Master Rangers gain a companion animal that acts as an additional party member — particularly powerful in a 4-character party cap as it effectively expands the roster. Gloom Stalker Rangers gain Dread Ambusher, adding an extra attack on the first round of combat and becoming effectively invisible in darkness to most enemies. Hunter Rangers gain Colossus Slayer, dealing extra damage to already-wounded enemies, and later Hunter's Mark as a bonus action rather than a full action. The optimal Ranger build multiclasses 5 levels of Gloom Stalker with 5 levels of Fighter (Action Surge) and 2 levels of Rogue (Cunning Action), creating a character that gets 4+ attacks in the first round of combat and can use Cunning Action to Dash or Disengage as a bonus action."
+  },
+  {
+    "id": "ER-CHAR-001",
+    "game": "Elden Ring",
+    "category": "character_stats",
+    "name": "Aether",
+    "text": "Aether is a Tarnished warrior who has walked the Lands Between since before the Shattering's aftermath settled. Build: Quality (Strength/Dexterity hybrid). Level 72. Stats: Vigor 35, Mind 18, Endurance 28, Strength 30, Dexterity 30, Intelligence 9, Faith 12, Arcane 7. Loadout: Bloodhound's Fang (left), Banished Knight's Greatsword +8 (right), Banished Knight's Shield. Armor: Tree Sentinel set minus helmet (replaced with Iron Kasa for visibility). Talismans: Arsenal Charm, Green Turtle Talisman, Erdtree's Favor, Dragoncrest Greatshield Talisman. Playstyle: Aggressive trading and poking with high poise, using shield pressure to open enemies for Bloodhound Fang's bleed buildup. Flask allocation: 10 crimson, 4 cerulean. Notable completed objectives: Stormveil, Raya Lucaria, Volcano Manor covenant, Rold Medallion obtained."
+  },
+  {
+    "id": "SK-CHAR-001",
+    "game": "Skyrim",
+    "category": "character_stats",
+    "name": "Mage",
+    "text": "A high-level Mage build in Skyrim centers on 400+ magicka with the Atronach stone (50% spell absorption, 50 bonus magicka, no natural regen). Primary skills at 100: Destruction, Conjuration, Alteration. Secondary at 80+: Enchanting, Restoration. With the Atronach stone and Atronach perk in Alteration, the character absorbs 80% of incoming spells — effectively immune to mage enemies. Destruction rotation: chain Blizzard and Fire Storm for AoE, single-target with Incinerate (fire) or Thunderbolt (shock) depending on enemy resistance. Conjuration anchor: two Dremora Lords provide physical damage and tank, lasting 60 seconds per cast. Enchanting at 100 with all perks reduces spell cost to 0% across schools — the endgame goal. Weakness: minimal physical defense requires keeping distance and heavy reliance on Conjured allies as front-line."
+  },
+  {
+    "id": "DIV-CHAR-001",
+    "game": "Divinity: Original Sin 2",
+    "category": "character_stats",
+    "name": "Ranger",
+    "text": "A Ranger in Divinity: Original Sin 2 builds around Finesse as primary stat (target: 30), Wits for initiative and critical chance (target: 20), and Ranged as the primary combat ability (5 points minimum). The optimal Ranger uses the Huntsman skill school for bonus damage at height advantage (Huntsman 2 provides +50% bonus), combined with Warfare for physical armor penetration. Primary skills: Ballistic Shot (maximum damage single target), Arrow Spray (AoE), Hail Strike (DoT). The Source ability Tactical Retreat is essential — it teleports the Ranger to high ground and grants free movement. Equipment priority: two-handed bow with high damage range, Finesse-boosting armor, boots with Huntsman bonus. Rangers excel at opening combat from stealth (Guerrilla skill: +40% backstab damage with Sneaking) and maintaining distance while physical damage dealers engage melee."
+  }
+]
