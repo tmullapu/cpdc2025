@@ -53,6 +53,12 @@ Final Persona-Consistent Output
 - No external vector database — runs fully in-memory with numpy
 - Graceful fallback to mock data when no relevant lore is found (relevance threshold: 0.2)
 
+### MCP Server
+- Exposes all 6 game functions + free-text semantic search as **MCP (Model Context Protocol) tools**
+- Compatible with any MCP-enabled client including Claude Desktop
+- Also exposes lore database as MCP resources (`lore://database/stats`, `lore://database/games`)
+- Built using Anthropic's official MCP Python SDK
+
 ### Function Calling
 - 6 game functions: `get_character_stats`, `get_quest_info`, `get_item_info`, `get_location_info`, `get_skill_tree`, `get_recipe_info`
 - Structured JSON output format enforced via prompt schema
@@ -87,6 +93,7 @@ Every response is scored against a gold-labeled dataset of 120 examples:
 | LLM | Llama 3.3 70B (GROQ) / GPT-4o (OpenAI) |
 | Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
 | Similarity Search | NumPy cosine similarity |
+| Tool Protocol | MCP (Model Context Protocol) |
 | UI | Streamlit |
 | Evaluation | rouge-score, bert-score |
 | Deployment | Streamlit Cloud |
@@ -98,6 +105,7 @@ Every response is scored against a gold-labeled dataset of 120 examples:
 ```
 cpdc2025/
 ├── app.py                    # Main Streamlit app — chat UI + evaluation dashboard
+├── mcp_server.py             # MCP server — exposes game tools to any MCP client
 ├── rag_engine.py             # RAG pipeline — embeddings + semantic retrieval
 ├── lore_database.json        # 42 narrative lore entries across 4 games
 ├── evaluation.py             # Scoring functions — fn_exact, ROUGE-L, BERTScore
@@ -129,17 +137,33 @@ cd cpdc2025
 pip install -r requirements.txt
 ```
 
-### Running Locally
+### Running the Streamlit App
 
 ```bash
-# Create a .env file with your API key
 echo "GROQ_API_KEY=your_key_here" > .env
-
-# Run the app
 streamlit run app.py
 ```
 
-### How to Use
+### Running the MCP Server
+
+```bash
+python mcp_server.py
+```
+
+To connect Claude Desktop, add this to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "cpdc2025-game-knowledge": {
+      "command": "python3",
+      "args": ["/path/to/cpdc2025/mcp_server.py"]
+    }
+  }
+}
+```
+
+### How to Use the App
 1. Select an **NPC character** from the sidebar (e.g. Aether, Myst, Shadow)
 2. Select **your player persona** (e.g. Red Witch, Aggressive Warrior) — watch the NPC adapt
 3. Choose a **prompting strategy**
